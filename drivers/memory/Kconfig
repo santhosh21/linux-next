@@ -100,6 +100,15 @@ config TI_EMIF
 	  parameters and other settings during frequency, voltage and
 	  temperature changes
 
+config TI_K3_DDR
+	tristate "Texas Instruments DDR Controller Driver for K3 family of SoCs"
+	depends on (ARCH_K3 && HWMON && SYSFS) || COMPILE_TEST
+	select DDR
+	help
+	  This driver is for the DDR Controller available in Texas Instruments
+	  K3 family of SoCs. This driver initializes the DDR Controller to
+	  monitor DDR-related events such as interrupts.
+
 config OMAP_GPMC
 	tristate "Texas Instruments OMAP SoC GPMC driver"
 	depends on OF_ADDRESS
