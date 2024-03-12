@@ -1057,4 +1057,15 @@
 		status = "disabled";
 	};
 
+	ddr0:ddr@f300000 {
+		compatible = "ti,am64-ddrss";
+		reg = <0x00 0x0f300000 0x00 0x200>,
+		      <0x00 0x0f308000 0x00 0x8000>,
+		      <0x00 0x43014000 0x00 0x100>;
+		reg-names = "ss_cfg", "cfg", "ctrl_mmr_lp4";
+		interrupts = <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
+		power-domains = <&k3_pds 170 TI_SCI_PD_EXCLUSIVE>;
+		clocks = <&k3_clks 170 0>;
+	};
+
 };
